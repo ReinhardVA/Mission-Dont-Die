@@ -1,6 +1,6 @@
 # Mission-Dont-Die
 
-> A top-down shooter made for Brackeys Game Jam 2025 — with a malfunctioning gun mechanic that keeps you on your toes!
+> A top-down shooter made for Brackeys Game Jam 2025 — with a Buff-Debuff System that keeps you on your toes.
 
 __Game Link__: https://reinhardva.itch.io/mission-dont-die
 
