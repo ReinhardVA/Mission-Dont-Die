@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EnemyTakeDamage : MonoBehaviour
@@ -13,7 +14,6 @@ public class EnemyTakeDamage : MonoBehaviour
     }
     private void Damage(){
         enemyHealth--;
-        Debug.Log(enemyHealth);
         if(enemyHealth <= 0){
             Destroy(gameObject);
         }

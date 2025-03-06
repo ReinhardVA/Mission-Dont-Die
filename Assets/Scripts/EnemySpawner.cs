@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour{
@@ -19,8 +20,8 @@ public class EnemySpawner : MonoBehaviour{
 
     private void SpawnEnemies(float spawnRate){
         if(Time.time > nextSpawnTime){
-            Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-            Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+            Transform spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
+            Instantiate(enemyPrefab.gameObject, spawnPoint.position, Quaternion.identity);
             nextSpawnTime = Time.time + spawnRate;
         }
     }

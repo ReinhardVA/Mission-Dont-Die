@@ -5,8 +5,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance {get; private set;}
     private bool isPlayerDied;
+    private float survivalTime;
     private void Start(){
         Instance = this;
+        isPlayerDied = false;
+        survivalTime = 0f;
         PlayerTakeDamage player = FindAnyObjectByType<PlayerTakeDamage>(); // Finds the component in the scene
         if (player != null)
         {
@@ -15,6 +18,11 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.LogError("PlayerTakeDamage component not found in the scene!");
+        }
+    }
+    private void Update(){
+        if(!isPlayerDied){
+            survivalTime += Time.deltaTime;
         }
     }
 
@@ -35,5 +43,9 @@ public class GameManager : MonoBehaviour
     public void RestartGame(){
         Time.timeScale = 1;
         Loader.Load(Loader.Scene.GameScene);
+    }
+
+    public float GetSurvivalTime(){
+        return survivalTime;
     }
 }
